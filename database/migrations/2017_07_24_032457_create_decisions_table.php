@@ -16,6 +16,7 @@ class CreateDecisionsTable extends Migration
         Schema::create('decisions', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('decision', 25);
         });
     }
 

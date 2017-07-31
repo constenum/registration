@@ -16,6 +16,9 @@ class CreateRelativesTable extends Migration
         Schema::create('relatives', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('first_name', 50);
+            $table->string('last_name', 50);
+            $table->string('relationship', 20);
         });
     }
 
