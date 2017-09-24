@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
+use App\School;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class SchoolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(School $school)
     {
         //
     }
@@ -52,10 +52,10 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  \App\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(School $school)
     {
         //
     }
@@ -64,10 +64,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  \App\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, School $school)
     {
         //
     }
@@ -75,27 +75,11 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  \App\School  $school
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(School $school)
     {
         //
-    }
-
-    /**
-     *
-     */
-    public static function getForDropdown() {
-
-        # Students
-        $students = Student::orderBy('last_name', 'ASC')->get();
-
-        $students_for_dropdown = [];
-        foreach($students as $student) {
-            $students_for_dropdown[$student->id] = $student->last_name.', '.$student->first_name;
-        }
-
-        return $authors_for_dropdown;
     }
 }

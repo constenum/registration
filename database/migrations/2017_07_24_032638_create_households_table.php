@@ -16,12 +16,12 @@ class CreateHouseholdsTable extends Migration
         Schema::create('households', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->boolean('financially_responsible');
-            $table->boolean('student_custody');
-            $table->string('address', 255);
-            $table->string('city', 50);
-            $table->string('state', 2);
-            $table->string('zip_code', 9);
+            $table->boolean('financially_responsible')->nullable();
+            $table->boolean('student_custody')->nullable();
+            $table->string('address', 255)->nullable();
+            $table->string('city', 50)->nullable();
+            $table->string('state', 2)->nullable();
+            $table->string('zip_code', 9)->nullable();
             $table->string('home_phone', 10)->nullable();
         });
     }

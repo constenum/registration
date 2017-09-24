@@ -9,6 +9,8 @@ class Relative extends Model
 {
     use SoftDeletes;
 
+    /* Relationship Methods */
+
     public function relationships() {
         return $this->belongsTo('App\Relationship');
     }
@@ -17,4 +19,15 @@ class Relative extends Model
         return $this->belongsToMany('App\Student')
             ->withTimestamps();
     }
+
+    /* End Relationship Methods */
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'relationship',
+    ];
 }

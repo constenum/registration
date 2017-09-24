@@ -41,6 +41,10 @@ class Student extends Model
             ->withTimestamps();
     }
 
+    public function schools() {
+        return $this->belongsTo('App\School');
+    }
+
     public function sports() {
         return $this->belongsToMany('App\Sport')
             ->withTimestamps();

@@ -11,6 +11,12 @@ class DecisionsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $seeds = ['Student', 'Parent', 'Both'];
+
+        foreach ($seeds as $seed) {
+            $decision = new \App\Decision();
+            $decision->decision = $seed;
+            $decision->save();
+        }
     }
 }

@@ -11,6 +11,12 @@ class AboutTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $seeds = ['8th Grade Visit', 'Family', 'Friend', 'Individual Vist', 'Local Paper', 'Mailing', 'Open House', 'Other', 'Radio', 'Television', 'Website'];
+
+        foreach ($seeds as $seed) {
+            $about = new \App\About();
+            $about->about = $seed;
+            $about->save();
+        }
     }
 }

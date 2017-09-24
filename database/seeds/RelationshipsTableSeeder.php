@@ -11,6 +11,12 @@ class RelationshipsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $seeds = ['Aunt', 'Cousin', 'Father', 'Grandmother', 'Grandfather', 'Legal Guardian', 'Mother', 'Niece', 'Sister', 'Step-Father', 'Step-Mother'];
+
+        foreach ($seeds as $seed) {
+            $relationship = new \App\Relationship();
+            $relationship->relationship = $seed;
+            $relationship->save();
+        }
     }
 }

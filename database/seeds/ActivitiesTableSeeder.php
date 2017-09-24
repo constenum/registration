@@ -11,6 +11,12 @@ class ActivitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $seeds = ['Art', 'Band', 'Choir', 'Christian Services', 'Instrument', 'Musical', 'Orchestra', 'STEM'];
+
+        foreach ($seeds as $seed) {
+            $activity = new \App\Activity();
+            $activity->activity = $seed;
+            $activity->save();
+        }
     }
 }

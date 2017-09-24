@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRelativesTable extends Migration
+class CreateSchoolsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateRelativesTable extends Migration
      */
     public function up()
     {
-        Schema::create('relatives', function (Blueprint $table) {
+        Schema::create('schools', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('school');
+            $table->string('city');
             $table->timestamps();
-            $table->string('first_name', 50)->nullable();
-            $table->string('last_name', 50)->nullable();
-            $table->string('relationship', 20)->nullable();
         });
     }
 
@@ -29,6 +28,6 @@ class CreateRelativesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relatives');
+        Schema::dropIfExists('schools');
     }
 }
